@@ -35,6 +35,9 @@ function APIResponse($body)
     return json_encode(array(
         "statusCode"=>200,
         "headers"=>$headers,
-        "body"=>$body
+        "body"=>array(
+            "body"=>$body,
+            "phpversion"=>phpversion()
+        )
     ));
 }
